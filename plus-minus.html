@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="main-icons">
+        <div class="icon-container">
+            <i class="fa fa-minus"></i>
+        </div>
+        <div class="icon-container">
+            <i class="fa fa-minus"></i>
+        </div>
+        <div class="icon-container">
+            <i class="fa fa-minus"></i>
+        </div>
+        <div class="icon-container">
+            <i class="fa fa-minus"></i>
+        </div>
+    </div>
+
+
+    <script>
+        const mainIcons = document.querySelector('.main-icons');
+
+        function removeAllPlus() {
+            const icons = mainIcons.querySelectorAll('i.fa.fa-plus');
+            icons.forEach(icon => {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            });
+        };
+
+        const containerIcons = document.querySelectorAll('.icon-container');
+        containerIcons.forEach(containerIcon => {
+            containerIcon.addEventListener('click', (e) => {
+                removeAllPlus();
+                e.target.querySelector('i').classList.remove('fa-minus');
+                e.target.querySelector('i').classList.add('fa-plus');
+            });
+        });
+
+    </script>
+</body>
+</html>
